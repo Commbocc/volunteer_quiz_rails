@@ -1,0 +1,36 @@
+<%= nested_form_for(question) do |f| %>
+<% if question.errors.any? %>
+<div id="error_explanation">
+	<h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+	<ul>
+		<% question.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<div class="form-group">
+	<%= f.label :content, 'Question' %>
+	<%= f.text_area :content, class: 'form-control' %>
+</div>
+
+<!-- Answers -->
+<fieldset>
+	<legend>Answers</legend>
+	<%= f.fields_for :answers do |ff| %>
+	<div class="well well-sm">
+		<%= render 'answers/form_fields', f: ff %>
+		<%= ff.link_to_remove "Remove" %>
+	</div>
+	<% end %>
+	<p>
+		<%= f.link_to_add "Add", :answers %>
+	</p>
+</fieldset>
+
+<div class="actions">
+	<%= f.submit %>
+</div>
+<% end %>

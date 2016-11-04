@@ -1,0 +1,16 @@
+<div class="form-group">
+	<%= f.label :content, "Answer" %>
+	<%= f.text_area :content, class: 'form-control' %>
+</div>
+
+<!-- Opps -->
+<fieldset>
+	<legend>Opportunity Weights</legend>
+	<div class="row">
+		<%= f.fields_for :opportunity_weights do |ff| %>
+		<div class="col-lg-3 col-md-4 col-sm-6">
+			<%= render 'answer_opportunities/form_fields', f: ff %>
+		</div>
+		<% end %>
+	</div>
+</fieldset>

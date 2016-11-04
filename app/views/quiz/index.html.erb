@@ -1,0 +1,30 @@
+<h1>Volunteer Quiz</h1>
+
+<form class="" action="<%= quiz_results_path %>" method="post">
+	<%= token_tag nil %>
+
+	<ol id="questions">
+		<% Question.all.each do |question| %>
+		<li class="form-group">
+			<h3>
+				<%= question.content %>
+			</h3>
+			<ul class="list-unstyled">
+				<% question.answers.each do |answer| %>
+				<li>
+					<label>
+						<input type="radio" name="questions[<%= question.id %>]" value="<%= answer.id %>" required>
+						<%= answer.content %>
+					</label>
+				</li>
+				<% end %>
+			</ul>
+		</li>
+		<% end %>
+	</ol>
+
+	<p class="text-center">
+		<button type="submit" name="button" class="btn btn-primary btn-lg">Submit</button>
+	</p>
+
+</form>
