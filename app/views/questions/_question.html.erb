@@ -1,0 +1,10 @@
+<strong>
+	<%= question.content %>
+</strong>
+<ul>
+	<% question.answers.each do |answer| %>
+	<li>
+		<%= answer.content %>
+	</li>
+	<% end %>
+</ul>

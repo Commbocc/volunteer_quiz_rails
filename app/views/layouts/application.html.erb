@@ -24,18 +24,31 @@
 </head>
 <body>
 
-	<nav class="container">
-		<ul class="list-inline">
-			<li><%= link_to 'Quiz', root_path %></li>
-			<li><%= link_to 'Opportunities', opportunities_path %></li>
-			<li><%= link_to 'Questions', questions_path %></li>
-			<li><%= link_to 'Answers', answers_path %></li>
-		</ul>
-	</nav>
-
 	<section class="container">
 		<%= yield %>
 	</section>
+
+	<footer class="container">
+		<hr>
+		<nav class="row">
+			<div class="col-sm-6">
+				<ul class="list-inline text-center">
+					<%= link_to 'Quiz', root_path, class: 'btn btn-link' %>
+				</ul>
+			</div>
+			<div class="col-sm-6">
+				<ul class="list-inline text-center">
+					<li><%= link_to 'Admin', admin_path %></li>
+					<% if logged_in? %>
+					<li><%= link_to 'Opportunities', opportunities_path %></li>
+					<li><%= link_to 'Questions', questions_path %></li>
+					<li><%= link_to 'Answers', answers_path %></li>
+					<% end %>
+				</ul>
+			</div>
+		</nav>
+
+	</footer>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

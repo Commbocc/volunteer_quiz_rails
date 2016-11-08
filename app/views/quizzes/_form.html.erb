@@ -1,0 +1,51 @@
+<%= form_for(quiz) do |f| %>
+<% if quiz.errors.any? %>
+<div id="error_explanation" class="alert alert-warning">
+	<strong><%= pluralize(quiz.errors.count, "error") %> prohibited this quiz from being submitted:</strong>
+
+	<ul>
+		<% quiz.errors.full_messages.each do |message| %>
+		<li><%= message %></li>
+		<% end %>
+	</ul>
+</div>
+<% end %>
+
+<ol id="questions" class="list-unstyled">
+	<% Question.all.each do |question| %>
+	<li class="form-group">
+		<h3>
+			<%= question.content %>
+		</h3>
+		<div class="list-group">
+			<% question.answers.each do |answer| %>
+			<label class="list-group-item">
+				<div class="media">
+					<div class="media-left">
+						<span class="media-object" style="padding-left: 3px;">
+							<%= radio_button :questions, question.id, answer.id, checked: is_checked?(question, answer.id) %>
+						</span>
+					</div>
+					<div class="media-body lead">
+						<%= answer.content %>
+					</div>
+				</div>
+			</label>
+			<% end %>
+		</div>
+	</li>
+	<% end %>
+</ol>
+
+<div class="row">
+	<div class="col-sm-6 col-sm-offset-3">
+		<p class="text-center">
+			<%= f.submit 'Get Results', class: 'btn btn-primary btn-lg btn-block' %>
+		</p>
+		<p class="text-center">
+			<%= button_tag 'Start Over', type: :reset, class: 'btn btn-default btn-sm' %>
+		</p>
+	</div>
+</div>
+
+<% end %>

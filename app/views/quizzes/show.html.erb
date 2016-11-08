@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<section class="jumbotron page-header text-center" style="background-image: url(<%= @quiz.results.first.image_src %>); background-size: cover;">
+
+	<h1 class="text-center">
+		<small>
+			Best suited to Volunteer with
+		</small>
+		<br>
+		<%= @quiz.results.first.name %>
+	</h1>
+
+	<p>
+		Sed do eiusmod tempor <%= link_to 'incididunt ut labore', @quiz.results.first.link %> <a href="#"></a> et dolore magna aliqua.
+	</p>
+
+</section>
+
+<section class="lead">
+
+	<p>
+		You may also be interested in voluteering with:
+	</p>
+
+	<ul>
+		<% @quiz.results[1..3].each do |result| %>
+		<li>
+			<%= link_to result.name, result.link %>
+		</li>
+		<% end %>
+	</ul>
+
+</section>

@@ -22,15 +22,15 @@
 	<%= f.fields_for :answers do |ff| %>
 	<div class="well well-sm">
 		<%= render 'answers/form_fields', f: ff %>
-		<%= ff.link_to_remove "Remove" %>
+		<%= ff.link_to_remove "Remove", class: 'btn btn-xs btn-danger' %>
 	</div>
 	<% end %>
 	<p>
-		<%= f.link_to_add "Add", :answers %>
+		<%= f.link_to_add "Add", :answers, class: 'btn btn-xs btn-success' %>
 	</p>
 </fieldset>
 
-<div class="actions">
-	<%= f.submit %>
+<div class="form-group">
+	<%= f.submit nil, class: 'btn btn-default' %>
 </div>
 <% end %>

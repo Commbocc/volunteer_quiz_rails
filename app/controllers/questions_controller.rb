@@ -1,4 +1,6 @@
 class QuestionsController < ApplicationController
+
+	before_action :authenticate
 	before_action :set_question, only: [:show, :edit, :update, :destroy]
 
 	# GET /questions
@@ -18,23 +20,22 @@ class QuestionsController < ApplicationController
 
 		@question.answers.build
 
-		@question.answers.each do |ans|
-			Opportunity.all.each do |opp|
-				ans.opportunity_weights.build(opportunity_id: opp.id)
-			end
-		end
-
+		# @question.answers.each do |ans|
+		# 	Opportunity.all.each do |opp|
+		# 		ans.opportunity_weights.build(opportunity_id: opp.id)
+		# 	end
+		# end
 	end
 
 	# GET /questions/1/edit
 	def edit
-		@question.answers.each do |ans|
-			if ans.opportunity_weights.empty?
-				Opportunity.all.each do |opp|
-					ans.opportunity_weights.build(opportunity_id: opp.id)
-				end
-			end
-		end
+		# @question.answers.each do |ans|
+		# 	if ans.opportunity_weights.empty?
+		# 		Opportunity.all.each do |opp|
+		# 			ans.opportunity_weights.build(opportunity_id: opp.id)
+		# 		end
+		# 	end
+		# end
 	end
 
 	# POST /questions

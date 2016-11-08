@@ -1,7 +1,6 @@
 class AnswersController < ApplicationController
 
-	http_basic_authenticate_with name: "admin", password: "secret"
-
+	before_action :authenticate
 	before_action :set_answer, only: [:show, :edit, :update, :destroy]
 
 	# GET /answers
@@ -19,18 +18,18 @@ class AnswersController < ApplicationController
 	def new
 		@answer = Answer.new
 
-		Opportunity.all.each do |opp|
-			@answer.opportunity_weights.build(opportunity_id: opp.id)
-		end
+		# Opportunity.all.each do |opp|
+		# 	@answer.opportunity_weights.build(opportunity_id: opp.id)
+		# end
 	end
 
 	# GET /answers/1/edit
 	def edit
-		if @answer.opportunity_weights.empty?
-			Opportunity.all.each do |opp|
-				@answer.opportunity_weights.build(opportunity_id: opp.id)
-			end
-		end
+		# if @answer.opportunity_weights.empty?
+		# 	Opportunity.all.each do |opp|
+		# 		@answer.opportunity_weights.build(opportunity_id: opp.id)
+		# 	end
+		# end
 	end
 
 	# POST /answers

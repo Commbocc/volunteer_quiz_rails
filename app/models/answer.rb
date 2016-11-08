@@ -7,4 +7,16 @@ class Answer < ApplicationRecord
 
 	validates :content, presence: true
 
+	after_initialize :init_weights
+
+	private
+
+	def init_weights
+		unless opportunity_weights.any?
+			Opportunity.all.each do |opp|
+				opportunity_weights.find_or_initialize_by(opportunity_id: opp.id)
+			end
+		end
+	end
+
 end
