@@ -9,6 +9,8 @@ class Answer < ApplicationRecord
 
 	after_initialize :init_weights
 
+	default_scope { order :position }
+
 	private
 
 	def init_weights

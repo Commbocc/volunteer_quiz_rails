@@ -1,5 +1,7 @@
 class AnswersController < ApplicationController
 
+	include Sortable
+
 	before_action :authenticate
 	before_action :set_answer, only: [:show, :edit, :update, :destroy]
 

@@ -1,0 +1,19 @@
+// @import 'https://fonts.googleapis.com/css?family=Raleway:500,500i,600';
+// @import 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i';
+// @import 'https://fonts.googleapis.com/css?family=Ubuntu:400,400i,700,700i';
+
+// $font-family-base: Menlo, Monaco, Consolas, "Courier New", monospace !default;
+// $font-family-base: Georgia, "Times New Roman", Times, serif !default;
+// $font-family-base: 'Raleway', sans-serif !default;
+
+@import "./*";
+@import "bootstrap";
+
+.gradient {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f16f61+0,154471+100 */
+	background: #f16f61; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #f16f61 0%, #154471 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #f16f61 0%,#154471 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #f16f61 0%,#154471 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f16f61', endColorstr='#154471',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}

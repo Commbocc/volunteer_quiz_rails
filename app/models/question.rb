@@ -5,4 +5,6 @@ class Question < ApplicationRecord
 
 	validates :content, presence: true
 
+	default_scope { order :position }
+
 end

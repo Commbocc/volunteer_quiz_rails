@@ -12,6 +12,7 @@ class OpportunitiesController < ApplicationController
 	# GET /opportunities/1
 	# GET /opportunities/1.json
 	def show
+		redirect_to @opportunity.link if @opportunity.link.present? && params[:follow].present?
 	end
 
 	# GET /opportunities/new

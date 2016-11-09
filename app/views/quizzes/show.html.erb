@@ -11,7 +11,7 @@
 	</h1>
 
 	<p>
-		Sed do eiusmod tempor <%= link_to 'incididunt ut labore', @quiz.results.first.link %> <a href="#"></a> et dolore magna aliqua.
+		Sed do eiusmod tempor <%= link_to 'incididunt ut labore', opportunity_path(@quiz.results.first, follow: true) %> et dolore magna aliqua.
 	</p>
 
 </section>
@@ -25,7 +25,7 @@
 	<ul>
 		<% @quiz.results[1..3].each do |result| %>
 		<li>
-			<%= link_to result.name, result.link %>
+			<%= link_to result.name, opportunity_path(result, follow: true) %>
 		</li>
 		<% end %>
 	</ul>

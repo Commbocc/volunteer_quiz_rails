@@ -1,9 +1,9 @@
 <strong>
 	<%= question.content %>
 </strong>
-<ul>
+<ul class="answers" data-sort="<%= sort_answers_path %>">
 	<% question.answers.each do |answer| %>
-	<li>
+	<li id="sortee_<%= answer.id %>">
 		<%= answer.content %>
 	</li>
 	<% end %>

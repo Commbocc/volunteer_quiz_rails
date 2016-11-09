@@ -13,7 +13,7 @@
 
 <ol id="questions" class="list-unstyled">
 	<% Question.all.each do |question| %>
-	<li class="form-group">
+	<li class="form-group" style="margin-top: 50px;">
 		<h3>
 			<%= question.content %>
 		</h3>
@@ -23,7 +23,7 @@
 				<div class="media">
 					<div class="media-left">
 						<span class="media-object" style="padding-left: 3px;">
-							<%= radio_button :questions, question.id, answer.id, checked: is_checked?(question, answer.id) %>
+							<%= radio_button :questions, question.id, answer.id, checked: is_checked?(question, answer.id), class: 'radio-answer' %>
 						</span>
 					</div>
 					<div class="media-body lead">
@@ -39,11 +39,11 @@
 
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
-		<p class="text-center">
+		<p>
 			<%= f.submit 'Get Results', class: 'btn btn-primary btn-lg btn-block' %>
 		</p>
 		<p class="text-center">
-			<%= button_tag 'Start Over', type: :reset, class: 'btn btn-default btn-sm' %>
+			<%= button_tag 'Start Over', type: :reset, class: 'btn btn-info btn-sm' %>
 		</p>
 	</div>
 </div>
