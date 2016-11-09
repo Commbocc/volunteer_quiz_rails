@@ -9,7 +9,7 @@ class Answer < ApplicationRecord
 
 	after_initialize :init_weights
 
-	default_scope { order :position }
+	default_scope { includes(:opportunity_weights).order(:position) }
 
 	private
 

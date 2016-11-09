@@ -4,8 +4,6 @@ class QuizzesController < ApplicationController
 	# GET /quizzes/new
 	def new
 		@quiz = Quiz.new
-		@quiz.questions = {1 => 2}
-		puts @quiz.questions
 	end
 
 	# POST /quizzes
