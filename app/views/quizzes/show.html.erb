@@ -1,20 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<section class="jumbotron page-header text-center" style="background-image: url(<%= @quiz.results.first.image_src %>); background-size: cover;">
-
-	<h1 class="text-center">
-		<small>
-			Best suited to Volunteer with
-		</small>
-		<br>
-		<%= @quiz.results.first.name %>
-	</h1>
-
-	<p>
-		Sed do eiusmod tempor <%= link_to 'incididunt ut labore', opportunity_path(@quiz.results.first, follow: true) %> et dolore magna aliqua.
-	</p>
-
-</section>
+<%= render @quiz.results.first, as: :opportunity %>
 
 <section class="lead">
 

@@ -1,0 +1,15 @@
+<section class="jumbotron page-header text-center" style="background-image: url(<%= opportunity.image_src %>); background-size: cover;">
+
+	<h1 class="text-center">
+		<small>
+			Best suited to Volunteer with
+		</small>
+		<br>
+		<%= opportunity.name %>
+	</h1>
+
+	<p>
+		Sed do eiusmod tempor <%= link_to 'incididunt ut labore', opportunity_path(opportunity, follow: true) %> et dolore magna aliqua.
+	</p>
+
+</section>
