@@ -13,7 +13,7 @@
 
 <ol id="questions" class="list-unstyled">
 	<% Question.all.each do |question| %>
-	<li class="form-group" style="margin-top: 50px;">
+	<li class="form-group">
 		<h3>
 			<%= question.content %>
 		</h3>
@@ -22,7 +22,7 @@
 			<label class="list-group-item">
 				<div class="media">
 					<div class="media-left">
-						<span class="media-object" style="padding-left: 3px;">
+						<span class="media-object">
 							<%= radio_button :questions, question.id, answer.id, checked: is_checked?(question, answer.id), class: 'radio-answer' %>
 						</span>
 					</div>
