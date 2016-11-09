@@ -34,10 +34,11 @@
 			</div>
 			<div class="col-sm-6">
 				<ul class="list-inline text-center">
-					<li><%= link_to 'Admin', admin_path %></li>
 					<% if logged_in? %>
 					<li><%= link_to 'Opportunities', opportunities_path %></li>
 					<li><%= link_to 'Questions', questions_path %></li>
+					<% else %>
+					<li><%= link_to 'Admin', admin_path %></li>
 					<% end %>
 				</ul>
 			</div>
