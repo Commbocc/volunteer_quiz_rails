@@ -14,15 +14,25 @@
 		</p>
 
 		<div class="text-center">
+
+			<% content_for :open_graph do %>
+			<meta property="og:title" content="I'm Best Suited to Volunteer with <%= opportunity.name %>!" />
+			<meta property="og:url" content="<%= root_url %>" />
+			<meta property="og:image" content="<%= opportunity.image %>" />
+			<meta property="og:description" content="Hillsborough County Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+			<meta property="og:site_name" content="Hillsborough County Volunteer Army - Earn Your Stripes" />
+			<% end %>
+
 			<% @sharethis.each do |share| %>
 			<span
 			class="<%= share.css_class %>"
 			displayText="<%= share.name %>"
 			st_url="<%= root_url %>"
-			st_title="I'm Best Suited to Volunteer with <%= opportunity.name %>"
+			st_title="I'm Best Suited to Volunteer with <%= opportunity.name %>!"
 			st_image="<%= opportunity.image %>"
 			st_summary="Hillsborough County Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></span>
 			<% end if @sharethis.present? %>
+
 		</div>
 
 	</div>
