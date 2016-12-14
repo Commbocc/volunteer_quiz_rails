@@ -1,19 +1,1 @@
-<p id="notice"><%= notice %></p>
-
 <%= render @quiz.results.first, as: :opportunity %>
-
-<section class="lead">
-
-	<p>
-		You may also be interested in voluteering with:
-	</p>
-
-	<ul>
-		<% @quiz.results[1..3].each do |result| %>
-		<li>
-			<%= link_to result.name, opportunity_path(result, follow: true) %>
-		</li>
-		<% end %>
-	</ul>
-
-</section>

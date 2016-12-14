@@ -1,0 +1,25 @@
+<footer class="container">
+	<hr>
+	<nav class="row">
+		<div class="col-sm-4 col-sm-push-4">
+			<ul class="list-inline text-center">
+				<%= link_to 'Take the Quiz', root_path, class: 'btn btn-link' %>
+			</ul>
+		</div>
+		<div class="col-sm-4 col-sm-push-4">
+			<ul class="list-inline text-center">
+				<% if logged_in? %>
+				<li><%= link_to 'Opportunities', opportunities_path %></li>
+				<li><%= link_to 'Questions', questions_path %></li>
+				<% else %>
+				<li><%= link_to 'Admin', admin_path %></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="col-sm-4 col-sm-pull-8">
+			<p>
+				<%= image_tag 'logo.png', width: 200, class: 'img-responsive center-block' %>
+			</p>
+		</div>
+	</nav>
+</footer>

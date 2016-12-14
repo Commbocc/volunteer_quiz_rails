@@ -1,5 +1,7 @@
 class OpportunitiesController < ApplicationController
 
+	layout 'application_no_container', only: [:show]
+
 	before_action :authenticate, except: [:show]
 	before_action :set_opportunity, only: [:show, :edit, :update, :destroy]
 
@@ -12,7 +14,12 @@ class OpportunitiesController < ApplicationController
 	# GET /opportunities/1
 	# GET /opportunities/1.json
 	def show
-		redirect_to @opportunity.link if @opportunity.link.present? && params[:follow].present?
+		begin
+			@quiz = Quiz.new JSON.parse(session[:quiz])
+		rescue
+			# redirect_to @opportunity.link if @opportunity.link.present? && params[:follow].present?
+			redirect_to root_url
+		end
 	end
 
 	# GET /opportunities/new

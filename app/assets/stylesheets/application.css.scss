@@ -9,7 +9,20 @@
 @import "./*";
 @import "bootstrap";
 
-.gradient {
+.text-secondary {
+	color: $brand-secondary;
+}
+
+.gradient-light {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#79ccd2+0,79ccd2+50,8cd3d7+51,8cd3d7+100 */
+	background: #79ccd2; /* Old browsers */
+	background: -moz-linear-gradient(-45deg,  #79ccd2 0%, #79ccd2 50%, #8cd3d7 51%, #8cd3d7 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg,  #79ccd2 0%,#79ccd2 50%,#8cd3d7 51%,#8cd3d7 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg,  #79ccd2 0%,#79ccd2 50%,#8cd3d7 51%,#8cd3d7 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#79ccd2', endColorstr='#8cd3d7',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.gradient-alt {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f16f61+0,154471+100 */
 	background: #f16f61; /* Old browsers */
 	background: -moz-linear-gradient(-45deg,  #f16f61 0%, #154471 100%); /* FF3.6-15 */

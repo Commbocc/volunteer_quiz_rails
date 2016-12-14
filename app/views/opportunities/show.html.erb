@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
-
 <%= render @opportunity %>
 
-<%= link_to 'Edit', edit_opportunity_path(@opportunity) %> |
-<%= link_to 'Back', opportunities_path %>
+<% if logged_in? %>
+<div class="container">
+	<%= link_to 'Edit', edit_opportunity_path(@opportunity) %> |
+	<%= link_to 'Back', opportunities_path %>
+</div>
+<% end %>

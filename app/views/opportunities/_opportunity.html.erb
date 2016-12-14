@@ -1,15 +1,86 @@
-<section class="jumbotron page-header text-center" style="background-image: url(<%= opportunity.image_src %>); background-size: cover;">
+<section class="jumbotron page-header text-center gradient-light" style="margin-top: 0;">
+	<div class="container">
 
-	<h1 class="text-center">
-		<small>
-			Best suited to Volunteer with
-		</small>
-		<br>
-		<%= opportunity.name %>
-	</h1>
+		<h1 class="text-center">
+			<small style="color: #3f6278;">
+				You're best suited to volunteer with
+			</small>
+			<br>
+			<%= opportunity.name %>
+		</h1>
 
-	<p>
-		Sed do eiusmod tempor <%= link_to 'incididunt ut labore', opportunity_path(opportunity, follow: true) %> et dolore magna aliqua.
+		<p>
+			Sed do eiusmod tempor <%= link_to 'incididunt ut labore', opportunity.link %> et dolore magna aliqua.
+		</p>
+
+		<div class="text-center">
+			<% @sharethis.each do |share| %>
+			<span
+			class="<%= share.css_class %>"
+			displayText="<%= share.name %>"
+			st_url="<%= root_url %>"
+			st_title="I'm Best Suited to Volunteer with <%= opportunity.name %>"
+			st_image="<%= opportunity.image %>"
+			st_summary="Hillsborough County Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></span>
+			<% end if @sharethis.present? %>
+		</div>
+
+	</div>
+</section>
+
+<section class="container">
+	<p id="notice"><%= notice %></p>
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="embed-responsive embed-responsive-16by9 thumbnail">
+				<%= image_tag opportunity.image, class: 'img-responsive center-block' %>
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<div class="lead">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</div>
+		</div>
+	</div>
+
+	<p class="text-center">
+		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formstackModal">
+			Sounds Great, Let's Get Started!
+		</button>
 	</p>
 
+	<hr>
+
 </section>
+
+<section class="container">
+
+	<div class="row">
+		<div class="col-md-6 col-md-push-6">
+
+			<p class="h4">
+				You may also be interested in voluteering with:
+			</p>
+
+			<div class="list-group">
+				<% @quiz.results(opportunity.id).take(3).each do |result| %>
+				<%= link_to result.name, result, class: 'list-group-item' %>
+				<% end if @quiz.present? %>
+			</div>
+
+		</div>
+		<div class="col-md-6 col-md-pull-6">
+			<a href="<%= root_path %>" class="thumbnail">
+				<%= image_tag 'volunteer-army-logo.png', width: 400, class: 'img-responsive center-block' %>
+				<div class="caption text-center h5">
+					Take the Quiz Again
+				</div>
+			</a>
+		</div>
+	</div>
+
+</section>
+
+<!-- Modal -->
+<%= render 'opportunities/modal', opportunity: opportunity %>

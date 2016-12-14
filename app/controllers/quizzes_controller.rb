@@ -1,4 +1,5 @@
 class QuizzesController < ApplicationController
+
 	# before_action :set_quiz, only: [:show, :edit, :update, :destroy]
 
 	# GET /quizzes/new
@@ -9,10 +10,10 @@ class QuizzesController < ApplicationController
 	# POST /quizzes
 	# POST /quizzes.json
 	def create
-		@quiz = Quiz.new(params[:questions])
+		@quiz = Quiz.new(quiz_params, session)
 
 		if @quiz.valid?
-			render :show
+			redirect_to @quiz.results.first
 		else
 			render :new
 		end
@@ -29,7 +30,6 @@ class QuizzesController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def quiz_params
-		params.fetch(:quiz, {})
-		# params.require(:quiz).permit(:questions)
+		params.require(:quiz).permit(questions: Question.all.map{ |q| q.id.to_s })
 	end
 end

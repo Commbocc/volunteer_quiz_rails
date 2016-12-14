@@ -1,20 +1,10 @@
 <header class="page-header">
-	<h1 class="text-center">
-		<%= image_tag 'logo.png', width: 200 %><br>
-		<small>
-		Volunteer Quiz
-	</small>
-	</h1>
+	<p>
+		<%= image_tag 'logo.png', width: 120, class: 'img-responsive center-block' %>
+	</p>
+	<p>
+		<%= image_tag 'volunteer-army-logo.png', width: 600, class: 'img-responsive center-block' %>
+	</p>
 </header>
-
-<div class="row">
-	<div class=" col-sm-8 col-sm-offset-2">
-		<div class="embed-responsive embed-responsive-16by9">
-			<iframe class="embed-responsive-item" src="//www.youtube.com/embed/zpOULjyy-n8?rel=0"></iframe>
-		</div>
-	</div>
-</div>
-
-<hr>
 
 <%= render 'form', quiz: @quiz %>
