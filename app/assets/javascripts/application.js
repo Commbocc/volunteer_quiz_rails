@@ -15,4 +15,5 @@
 //= require jquery_nested_form
 //= require jquery-ui.min
 //= require bootstrap.min
+//= require simplemde.min
 //= require_tree .

@@ -13,4 +13,12 @@ class Opportunity < ApplicationRecord
 		end
 	end
 
+	def blurb_html
+		if blurb.present?
+			Kramdown::Document.new(blurb).to_html.html_safe
+		else
+			"<p class=\"text-muted\">Check back soon for information on volunteering with #{name}.</p>".html_safe
+		end
+	end
+
 end
