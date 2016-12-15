@@ -1,5 +1,8 @@
 class Opportunity < ApplicationRecord
 
+	extend FriendlyId
+	friendly_id :name, use: :slugged
+
 	has_many :opportunity_weights, inverse_of: :opportunity, dependent: :destroy, class_name: "AnswerOpportunity"
 
 	validates :name, :link, presence: true

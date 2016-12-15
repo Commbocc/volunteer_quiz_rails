@@ -53,3 +53,4 @@ gem 'rails_12factor', group: :production
 
 gem 'nested_form'
 gem 'kramdown'
+gem 'friendly_id'
