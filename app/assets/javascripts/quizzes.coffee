@@ -27,6 +27,8 @@ $ ->
 		e.preventDefault()
 		$(this).closest('form').get(0).reset()
 		toggle_lgis()
+		show_questions()
+		reset_submit_button()
 		return
 
 	# hide other questions when only "share this quiz" from Question 1 is selected
