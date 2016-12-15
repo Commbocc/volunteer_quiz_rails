@@ -45,11 +45,10 @@ ActiveRecord::Schema.define(version: 20161215003256) do
 
   create_table "opportunities", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "link"
     t.string   "image_src"
-    t.boolean  "accepts_monetary"
     t.text     "blurb"
     t.string   "slug"
     t.index ["slug"], name: "index_opportunities_on_slug", unique: true
