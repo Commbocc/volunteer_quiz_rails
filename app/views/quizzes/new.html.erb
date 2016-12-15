@@ -7,4 +7,62 @@
 	</p>
 </header>
 
+<div class="alert alert-info">
+	<p class="lead">
+		Answer as many or as few of the questions, only those answered will be used to create your volunteer profile.
+	</p>
+</div>
+
 <%= render 'form', quiz: @quiz %>
+
+<!-- modals -->
+
+<!-- shareThisModal -->
+<div class="modal fade" id="shareThisModal" tabindex="-1" role="dialog" aria-labelledby="shareThisModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="shareThisModalLabel">Share this Quiz</h4>
+			</div>
+			<div class="modal-body">
+
+				<div class="text-center">
+					<% @sharethis.each do |share| %>
+					<span
+					class="<%= share.css_class %>"
+					displayText="<%= share.name %>"
+					st_url="<%= root_url %>"
+					st_title="Volunteer Army - Earn Your Stripes!"
+					st_image="<%= image_path 'logo.png' %>"
+					st_summary="Hillsborough County Volunteer Army - Earn Your Stripes"></span>
+					<% end if @sharethis.present? %>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- donateModal -->
+<div class="modal fade" id="donateModal" tabindex="-1" role="dialog" aria-labelledby="donateModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="donateModalLabel">Donate</h4>
+			</div>
+			<div class="modal-body">
+
+				Donate
+
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>

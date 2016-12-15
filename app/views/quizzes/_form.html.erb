@@ -15,7 +15,7 @@
 
 <ol id="questions" class="list-unstyled">
 	<% Question.all.each do |question| %>
-	<li class="form-group">
+	<li class="quiz-question form-group" data-content="<%= question.content.parameterize %>">
 		<h3>
 			<%= question.content %>
 		</h3>
@@ -25,7 +25,7 @@
 				<div class="media">
 					<div class="media-left">
 						<span class="media-object">
-							<%= radio_button "quiz[questions]", question.id, answer.id, checked: is_checked?(question, answer.id), class: 'radio-answer' %>
+							<%= radio_button "quiz[questions]", question.id, answer.id, checked: is_checked?(question, answer.id), class: 'radio-answer', data: { content: answer.content.parameterize } %>
 						</span>
 					</div>
 					<div class="media-body lead">
@@ -42,7 +42,17 @@
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
 		<p>
-			<%= f.submit 'Get Results', class: 'btn btn-primary btn-lg btn-block' %>
+			<!-- Button trigger shareThisModal -->
+			<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#shareThisModal" id="modal-share-btn" style="display:none;">
+				Share the Quiz
+			</button>
+			<!-- Button trigger donateModal -->
+			<button type="button" class="btn btn-primary btn-lg btn-block" data-toggle="modal" data-target="#donateModal" id="modal-donate-btn" style="display:none;">
+				Donate
+			</button>
+		</p>
+		<p>
+			<%= f.submit 'Get Results', class: 'btn btn-primary btn-lg btn-block', id: 'submit-quiz-btn' %>
 		</p>
 		<p class="text-center">
 			<%= button_tag 'Start Over', type: :reset, class: 'btn btn-info btn-sm' %>
