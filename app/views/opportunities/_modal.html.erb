@@ -1,55 +1,56 @@
 <div class="modal fade" id="formstackModal" tabindex="-1" role="dialog" aria-labelledby="formstackModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<form method="post" novalidate enctype="multipart/form-data" action="https://www.formstack.com/forms/index.php" class="fsForm fsSingleColumn fsMaxCol1" id="fsForm2515031">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="formstackModalLabel">Next Steps to Volunteer with <%= opportunity.name %></h4>
-				</div>
-				<div class="modal-body">
+			<!-- <form method="post" novalidate enctype="multipart/form-data" action="https://www.formstack.com/forms/index.php" class="fsForm fsSingleColumn fsMaxCol1" id="fsForm2515031"> -->
+			<header class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="formstackModalLabel">Next Steps to Volunteer with <%= opportunity.name %></h4>
+			</header>
+			<div class="modal-body">
 
-					<input type="hidden" name="form" value="2515031" />
-					<input type="hidden" name="viewkey" value="G0zRwIMXzE" />
-					<input type="hidden" name="hidden_fields" id="hidden_fields2515031" value="" />
-					<input type="hidden" name="_submit" value="1" />
-					<input type="hidden" name="incomplete" id="incomplete2515031" value="" />
-					<input type="hidden" name="incomplete_password" id="incomplete_password2515031" />
-					<input type="hidden" name="style_version" value="3" />
-					<input type="hidden" id="viewparam" name="viewparam" value="685268" />
+				<p>
+					Enter your email below to lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+				</p>
 
-					<input type="hidden" name="field48147587" value="test@example.com" />
+				<input type="hidden" name="form" value="2515031" />
+				<input type="hidden" name="viewkey" value="G0zRwIMXzE" />
+				<input type="hidden" name="hidden_fields" id="hidden_fields2515031" value="" />
+				<input type="hidden" name="_submit" value="1" />
+				<input type="hidden" name="incomplete" id="incomplete2515031" value="" />
+				<input type="hidden" name="incomplete_password" id="incomplete_password2515031" />
+				<input type="hidden" name="style_version" value="3" />
+				<input type="hidden" id="viewparam" name="viewparam" value="685268" />
 
-					<div class="fsPage" id="fsPage2515031-1">
-						<div class="fsSection fs1Col">
-							<div id="fsRow2515031-2" class="fsRow fsFieldRow fsLastRow fsHidden">
-								<div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsHidden fsSpan100 fsHiddenByFieldSetting" id="fsCell48147590" lang="en">
-									<label id="label48147590" class="fsLabel" for="field48147590">Your Email                    </label>
-									<input type="email" id="field48147590" name="field48147590" size="50" value="" class="fsField fsFormatEmail" requried />
-								</div>
-							</div>
-							<div id="fsRow2515031-3" class="fsRow fsFieldRow fsLastRow fsHidden">
-								<div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsHidden fsSpan100 fsHiddenByFieldSetting" id="fsCell48147595" lang="en">
-									<label id="label48147595" class="fsLabel" for="field48147595">JSON Results                    </label>
-									<textarea id="field48147595" name="field48147595" rows="10" cols="50" class="fsField"></textarea>
-								</div>
+				<input type="hidden" name="field48147587" value="test@example.com" />
+
+				<div class="fsPage form-group" id="fsPage2515031-1">
+					<div class="fsSection fs1Col">
+						<div id="fsRow2515031-2" class="fsRow fsFieldRow fsLastRow fsHidden">
+							<div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsHidden fsSpan100 fsHiddenByFieldSetting" id="fsCell48147590" lang="en">
+								<label id="label48147590" class="fsLabel" for="field48147590">Your Email                    </label>
+								<input type="email" id="field48147590" name="field48147590" size="50" value="" placeholder="name@domain.com" class="fsField fsFormatEmail form-control" requried />
 							</div>
 						</div>
 					</div>
-					<div id="fsSubmit2515031" class="fsSubmit fsPagination">
-						<button type="button" id="fsPreviousButton2515031" class="fsPreviousButton" value="Previous Page" style="display:none;"><span class="fsFull">Previous</span><span class="fsSlim">←</span></button>
-					</div>
-
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-					<button type="button" id="fsNextButton2515031" class="fsNextButton" value="Next Page" style="display:none;"><span class="fsFull">Next</span><span class="fsSlim">→</span></button>
-					<input id="fsSubmitButton2515031"
-					class="fsSubmitButton btn btn-primary"
-					type="submit"
-					value="Submit Form" />
+				<div class="small text-muted">
+					<p>
+						All information submitted by this form or via email becomes a public record to the extent provided by law.
+					</p>
+					<p>
+						Under Florida law, e-mail addresses are public records. If you do not want your e-mail address released in response to a public-records request, do not send electronic mail to this entity. Instead, contact this office by phone or in writing.
+					</p>
 				</div>
-			</form>
+
+			</div>
+			<footer class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+				<button type="button" id="fsNextButton2515031" class="fsNextButton" value="Next Page" style="display:none;"><span class="fsFull">Next</span><span class="fsSlim">→</span></button>
+				<input id="fsSubmitButton2515031" class="fsSubmitButton btn btn-primary" type="submit" value="Submit Form" />
+			</footer>
+			<!-- </form> -->
 		</div>
 	</div>
 </div>
