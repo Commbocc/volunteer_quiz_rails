@@ -25,7 +25,7 @@
 				<div class="media">
 					<div class="media-left">
 						<span class="media-object">
-							<%= radio_button "quiz[questions]", question.id, answer.id, checked: is_checked?(question, answer.id), class: 'radio-answer', data: { content: answer.content.parameterize } %>
+							<%= radio_button "quiz[questions]", question.id, answer.id, checked: is_checked?(question, answer.id), class: 'radio-answer', data: { content: answer.content.parameterize, hide_questions: answer.hide_questions, show_donate_btn: answer.show_donate_btn } %>
 						</span>
 					</div>
 					<div class="media-body lead">

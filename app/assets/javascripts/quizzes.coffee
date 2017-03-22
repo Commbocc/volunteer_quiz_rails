@@ -43,7 +43,7 @@ $ ->
 			return
 		return
 
-	$('.radio-answer[data-content="share-this-quiz"]').change ->
+	$('.radio-answer[data-hide-questions="true"]').change ->
 		if $(this).is(':checked')
 			$except = $(this).closest('.quiz-question')
 			hide_questions($except)
@@ -51,10 +51,11 @@ $ ->
 			$('#modal-share-btn').show()
 		return
 
-	$('.radio-answer[data-content="donation-of-money-or-items"]').change ->
+	$('.radio-answer[data-show-donate-btn="true"]').change ->
 		if $(this).is(':checked')
 			$except = $(this).closest('.quiz-question')
 			hide_questions($except)
 			$('#submit-quiz-btn').hide()
+			$('#modal-share-btn').hide()
 			$('#modal-donate-btn').show()
 		return

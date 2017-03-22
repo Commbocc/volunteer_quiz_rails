@@ -82,6 +82,6 @@ class AnswersController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
 	def answer_params
-		params.require(:answer).permit(:content, :question_id, opportunity_weights_attributes: [:id, :opportunity_id, :weight])
+		params.require(:answer).permit(:content, :question_id, :hide_questions, :show_donate_btn opportunity_weights_attributes: [:id, :opportunity_id, :weight])
 	end
 end

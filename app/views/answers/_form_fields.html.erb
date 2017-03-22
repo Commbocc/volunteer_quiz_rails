@@ -14,3 +14,20 @@
 		<% end %>
 	</div>
 </fieldset>
+
+<div class="form-group">
+	<ul class="list-inline">
+		<li>
+			<label>
+				<%= f.check_box :hide_questions %>
+				Hide <em>ALL</em> other Questions when this answer is selected.
+			</label>
+		</li>
+		<li>
+			<label>
+				<%= f.check_box :show_donate_btn %>
+				Show the Donation when this answer is selected.
+			</label>
+		</li>
+	</ul>
+</div>
