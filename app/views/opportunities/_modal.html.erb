@@ -8,47 +8,13 @@
 			</header>
 			<div class="modal-body">
 
-				<p>
-					Enter your email below to lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-				</p>
+				<% other_opps = @quiz.results(opportunity.id).take(3).map{ |r| "#{r.name}" }.join(", ") if @quiz.present? %>
 
-				<input type="hidden" name="form" value="2515031" />
-				<input type="hidden" name="viewkey" value="G0zRwIMXzE" />
-				<input type="hidden" name="hidden_fields" id="hidden_fields2515031" value="" />
-				<input type="hidden" name="_submit" value="1" />
-				<input type="hidden" name="incomplete" id="incomplete2515031" value="" />
-				<input type="hidden" name="incomplete_password" id="incomplete_password2515031" />
-				<input type="hidden" name="style_version" value="3" />
-				<input type="hidden" id="viewparam" name="viewparam" value="685268" />
-
-				<input type="hidden" name="field48147587" value="test@example.com" />
-
-				<div class="fsPage form-group" id="fsPage2515031-1">
-					<div class="fsSection fs1Col">
-						<div id="fsRow2515031-2" class="fsRow fsFieldRow fsLastRow fsHidden">
-							<div class="fsRowBody fsCell fsFieldCell fsFirst fsLast fsLabelVertical fsHidden fsSpan100 fsHiddenByFieldSetting" id="fsCell48147590" lang="en">
-								<label id="label48147590" class="fsLabel" for="field48147590">Your Email                    </label>
-								<input type="email" id="field48147590" name="field48147590" size="50" value="" placeholder="name@domain.com" class="fsField fsFormatEmail form-control" requried />
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="small text-muted">
-					<p>
-						All information submitted by this form or via email becomes a public record to the extent provided by law.
-					</p>
-					<p>
-						Under Florida law, e-mail addresses are public records. If you do not want your e-mail address released in response to a public-records request, do not send electronic mail to this entity. Instead, contact this office by phone or in writing.
-					</p>
-				</div>
+				<script type="text/javascript" src="https://hcflgov.formstack.com/forms/js.php/volunteer_quiz?Opportunity=<%= opportunity.name %>&Secondary=<%= other_opps %>"></script>
 
 			</div>
 			<footer class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-				<button type="button" id="fsNextButton2515031" class="fsNextButton" value="Next Page" style="display:none;"><span class="fsFull">Next</span><span class="fsSlim">→</span></button>
-				<input id="fsSubmitButton2515031" class="fsSubmitButton btn btn-primary" type="submit" value="Submit Form" />
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 			</footer>
 			<!-- </form> -->
 		</div>

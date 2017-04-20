@@ -8,8 +8,16 @@ class Opportunity < ApplicationRecord
 	validates :name, presence: true
 	# validates :link, format: URI::regexp(%w(http https))
 
+	def has_link?
+		link.present?
+	end
+
+	def has_image?
+		image_src.present?
+	end
+
 	def image
-		if image_src.present?
+		if has_image?
 			image_src
 		else
 			'https://placehold.it/725x725.png?text=' + name

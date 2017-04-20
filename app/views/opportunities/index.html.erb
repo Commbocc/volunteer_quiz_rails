@@ -8,6 +8,8 @@
 	<thead>
 		<tr>
 			<th>Name</th>
+			<th>Has Link</th>
+			<th>Has Image</th>
 			<th colspan="2"></th>
 		</tr>
 	</thead>
@@ -16,6 +18,8 @@
 		<% @opportunities.each do |opportunity| %>
 		<tr>
 			<td><%= link_to opportunity.name, opportunity %></td>
+			<td><%= opportunity.has_link? %></td>
+			<td><%= opportunity.has_image? %></td>
 			<td><%= link_to 'Edit', edit_opportunity_path(opportunity) %></td>
 			<td><%= link_to 'Destroy', opportunity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 		</tr>
