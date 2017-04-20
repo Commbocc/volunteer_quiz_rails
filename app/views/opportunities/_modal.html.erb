@@ -7,8 +7,8 @@
 			</header>
 			<div class="modal-body">
 
-				<% other_opps = @quiz.results(opportunity.id).take(3).map{ |r| "#{r.name}" }.join(", ") if @quiz.present? %>
-				<% results = @quiz.questions.to_json %>
+				<% other_opps = @quiz.present? ? @quiz.results(opportunity.id).take(3).map{ |r| "#{r.name}" }.join(", ") : nil %>
+				<% results = @quiz.present? ? @quiz.questions.to_json : nil %>
 
 				<script type="text/javascript" src="https://hcflgov.formstack.com/forms/js.php/volunteer_quiz?Opportunity=<%= opportunity.name %>&Secondary=<%= other_opps %>&Results=<%= results %>"></script>
 
