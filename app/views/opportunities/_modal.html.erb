@@ -1,7 +1,6 @@
 <div class="modal fade" id="formstackModal" tabindex="-1" role="dialog" aria-labelledby="formstackModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
-			<!-- <form method="post" novalidate enctype="multipart/form-data" action="https://www.formstack.com/forms/index.php" class="fsForm fsSingleColumn fsMaxCol1" id="fsForm2515031"> -->
 			<header class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="formstackModalLabel">Next Steps to Volunteer with <%= opportunity.name %></h4>
@@ -9,14 +8,14 @@
 			<div class="modal-body">
 
 				<% other_opps = @quiz.results(opportunity.id).take(3).map{ |r| "#{r.name}" }.join(", ") if @quiz.present? %>
+				<% results = @quiz.questions.to_json %>
 
-				<script type="text/javascript" src="https://hcflgov.formstack.com/forms/js.php/volunteer_quiz?Opportunity=<%= opportunity.name %>&Secondary=<%= other_opps %>"></script>
+				<script type="text/javascript" src="https://hcflgov.formstack.com/forms/js.php/volunteer_quiz?Opportunity=<%= opportunity.name %>&Secondary=<%= other_opps %>&Results=<%= results %>"></script>
 
 			</div>
 			<footer class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
 			</footer>
-			<!-- </form> -->
 		</div>
 	</div>
 </div>
