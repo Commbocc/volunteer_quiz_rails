@@ -22,6 +22,11 @@ class QuizzesController < ApplicationController
 	def show
 	end
 
+	def results
+		q_results = JSON.parse(params[:q]).map{ |q, a| {Question.find(q).content => Answer.find(a).content} }
+		render json: JSON.pretty_generate(q_results)
+	end
+
 	private
 	# Use callbacks to share common setup or constraints between actions.
 	def set_quiz
