@@ -19,7 +19,7 @@
 			<meta property="og:title" content="I'm Best Suited to Volunteer with <%= opportunity.name %>!" />
 			<meta property="og:url" content="<%= root_url %>" />
 			<meta property="og:image" content="<%= opportunity.image %>" />
-			<meta property="og:description" content="Hillsborough County Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." />
+			<meta property="og:description" content="Hillsborough County Volunteer Army - Earn Your Stripes" />
 			<meta property="og:site_name" content="Hillsborough County Volunteer Army - Earn Your Stripes" />
 			<% end %>
 
@@ -30,7 +30,7 @@
 			st_url="<%= root_url %>"
 			st_title="I'm Best Suited to Volunteer with <%= opportunity.name %>!"
 			st_image="<%= opportunity.image %>"
-			st_summary="Hillsborough County Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."></span>
+			st_summary="Hillsborough County Volunteer Army - Earn Your Stripes"></span>
 			<% end if @sharethis.present? %>
 
 		</div>
@@ -54,11 +54,13 @@
 		</div>
 	</div>
 
+	<% if false %>
 	<p class="text-center">
 		<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#formstackModal">
 			Sounds Great, Let's Get Started!
 		</button>
 	</p>
+	<% end %>
 
 	<p class="text-center small">
 		<%= link_to 'Get more information on this Volunteer Opportunity', opportunity.link, target: '_blank' if opportunity.has_link? %>
