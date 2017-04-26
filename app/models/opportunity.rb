@@ -8,6 +8,8 @@ class Opportunity < ApplicationRecord
 	validates :name, presence: true
 	# validates :link, format: URI::regexp(%w(http https))
 
+	default_scope { order(:name) }
+
 	def has_link?
 		link.present?
 	end

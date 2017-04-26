@@ -1,5 +1,5 @@
 class Answer < ApplicationRecord
-	
+
 	belongs_to :question, inverse_of: :answers
 	has_many :opportunity_weights, inverse_of: :answer, dependent: :destroy, class_name: "AnswerOpportunity"
 	accepts_nested_attributes_for :opportunity_weights
@@ -13,10 +13,8 @@ class Answer < ApplicationRecord
 	private
 
 	def init_weights
-		unless opportunity_weights.any?
-			Opportunity.all.each do |opp|
-				opportunity_weights.find_or_initialize_by(opportunity_id: opp.id)
-			end
+		Opportunity.all.each do |opp|
+			AnswerOpportunity.find_or_create_by(answer_id: id, opportunity_id: opp.id)
 		end
 	end
 

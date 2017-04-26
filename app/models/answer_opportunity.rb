@@ -4,4 +4,6 @@ class AnswerOpportunity < ApplicationRecord
 
 	validates :opportunity_id, uniqueness: {scope: :answer_id}
 
+	default_scope { joins(:opportunity).order("opportunities.name") }
+
 end
