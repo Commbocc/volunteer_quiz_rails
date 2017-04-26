@@ -48,9 +48,15 @@
 			</div>
 		</div>
 		<div class="col-sm-8">
+			
 			<div class="lead">
 				<%= opportunity.blurb_html %>
 			</div>
+
+			<p class="text-center small">
+				<%= link_to 'Get more information on this Volunteer Opportunity', opportunity.link, target: '_blank' if opportunity.has_link? %>
+			</p>
+
 		</div>
 	</div>
 
@@ -61,10 +67,6 @@
 		</button>
 	</p>
 	<% end %>
-
-	<p class="text-center small">
-		<%= link_to 'Get more information on this Volunteer Opportunity', opportunity.link, target: '_blank' if opportunity.has_link? %>
-	</p>
 
 	<hr>
 
