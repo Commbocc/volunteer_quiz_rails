@@ -23,7 +23,8 @@ class QuizzesController < ApplicationController
 	end
 
 	def results
-		q_results = JSON.parse(params[:q]).map{ |q, a| {Question.find(q).content => Answer.find(a).content} }
+		results = Base64.decode64 params[:q]
+		q_results = JSON.parse(results).map{ |q, a| {Question.find(q).content => Answer.find(a).content} }
 		render json: JSON.pretty_generate(q_results)
 	end
 

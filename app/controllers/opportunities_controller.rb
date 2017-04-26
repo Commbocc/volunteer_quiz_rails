@@ -20,6 +20,9 @@ class OpportunitiesController < ApplicationController
 			# redirect_to @opportunity.link if @opportunity.link.present? && params[:follow].present?
 			redirect_to root_url
 		end
+
+		@other_opps = @quiz.results(@opportunity.id).take(3).map{ |r| "#{r.name}" }.join(", ")
+		@results_str = Base64.encode64 @quiz.questions.to_json
 	end
 
 	# GET /opportunities/new
