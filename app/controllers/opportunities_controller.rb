@@ -1,5 +1,7 @@
 class OpportunitiesController < ApplicationController
 
+	include ApplicationHelper
+
 	layout 'application_no_container', only: [:show]
 
 	before_action :authenticate, except: [:show]
@@ -18,11 +20,11 @@ class OpportunitiesController < ApplicationController
 			@quiz = Quiz.new JSON.parse(session[:quiz])
 		rescue
 			# redirect_to @opportunity.link if @opportunity.link.present? && params[:follow].present?
-			redirect_to root_url
+			redirect_to root_url unless logged_in?
 		end
 
-		@other_opps = @quiz.results(@opportunity.id).take(3).map{ |r| "#{r.name}" }.join(", ")
-		@results_str = Base64.encode64 @quiz.questions.to_json
+		@other_opps = @quiz.present? ? @quiz.results(@opportunity.id).take(3).map{ |r| "#{r.name}" }.join(", ") : []
+		@results_str = @quiz.present? ? Base64.encode64(@quiz.questions.to_json) : nil
 	end
 
 	# GET /opportunities/new
