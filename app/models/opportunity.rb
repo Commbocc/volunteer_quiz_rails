@@ -22,7 +22,7 @@ class Opportunity < ApplicationRecord
 		if has_image?
 			image_src
 		else
-			'https://placehold.it/725x725.png?text=' + name
+			'https://placehold.it/720x405.png?text=' + name
 		end
 	end
 
