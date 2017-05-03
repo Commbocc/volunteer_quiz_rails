@@ -17,7 +17,7 @@
 
 			<% content_for :open_graph do %>
 			<meta property="og:title" content="I'm Best Suited to Volunteer with <%= opportunity.name %>!" />
-			<meta property="og:url" content="<%= root_url %>" />
+			<meta property="og:url" content="<%= opportunity_url(opportunity) %>" />
 			<meta property="og:image" content="<%= opportunity.image %>" />
 			<meta property="og:description" content="Hillsborough County Volunteer Army - Earn Your Stripes" />
 			<meta property="og:site_name" content="Hillsborough County Volunteer Army - Earn Your Stripes" />
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<div class="col-sm-8">
-			
+
 			<div class="lead">
 				<%= opportunity.blurb_html %>
 			</div>
